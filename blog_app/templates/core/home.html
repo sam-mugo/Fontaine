@@ -3,5 +3,23 @@
 {% block tittle%}Home | {% endblock %}
 
 {% block content %}
-    <h1>Fontaine Blog</h1>
+    <section class="hero ">
+        <div class="hero-body">
+            <div class="container">
+                <section class="section">
+                    <div class="columns">
+                        <div class="column is-8 is-offset-2">
+                            {% for post in posts %}
+                                <div class="content is-medium">
+                                    <h2 class="subtitle is-5 has-text-grey">{{ post.created_at }}</h2>
+                                    <h1 class="title has-text-black is-3">{{ post.title }}</h1>
+                                    <p class="has-text-dark">{{ post.intro }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
 {% endblock %}
