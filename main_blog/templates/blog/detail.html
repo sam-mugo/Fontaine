@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ post.title }} | {% endblock %}
+
+{% block content %}
+<section class="hero ">
+    <div class="hero-body">
+        <div class="container">
+            <section class="section">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        
+                            <div class="content is-medium">
+                                <!-- can also use date: 'm-d-y H:i' to use hour and minute created--> 
+                                
+                                    <h2 class="subtitle is-5 has-text-grey">{{ post.created_at|timesince }} ago</h2>
+                                    <h1 class="title has-text-black is-3">{{ post.title }}</h1>
+                                    <p class="has-text-dark">{{ post.intro }}</p>
+                                    <p>{{ post.body }}</p>
+                                
+                                
+                            </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+{% endblock %}
