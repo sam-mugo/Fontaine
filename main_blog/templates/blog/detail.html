@@ -21,19 +21,19 @@
                                     <hr>
                                     <h2 class="subtitle is -4">Comments</h2>
 
-                                    <form method="post">
+                                    <form method="post" class="mb-6">
                                         {% csrf_token %}
                                         {{ form.as_p }}
 
                                         <div class="field">
                                             <div class="control">
-                                                <button class="is-success">Submit comment</button>
+                                                <button class="button is-success">Submit comment</button>
                                             </div>
                                         </div>
                                     </form>
 
                                     {% for comment in post.comments.all %}
-                                        <article class="media">
+                                        <article class="media box">
                                             <div class="media-content">
                                                 <strong>{{ comment.name }}</strong><small>{{comment.created_at | timesince }} ago</small><br>
                                                 {{ comment.body }}
