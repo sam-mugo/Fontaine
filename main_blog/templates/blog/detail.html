@@ -13,13 +13,13 @@
                                 <!-- can also use date: 'm-d-y H:i' to use hour and minute created--> 
                                 
                                     <h2 class="subtitle is-5 has-text-grey">{{ post.created_at|timesince }} ago</h2>
-                                    <h1 class="title has-text-black is-2">{{ post.title }}</h1>
-                                    <p class="has-text-dark">{{ post.intro }}</p>
-                                    <p style="color: hsl(0, 0%, 71%);">{{ post.body }}</p>
+                                    <h1 class="title has-text-black is-2" style="font-family: 'Poppins', sans-serif;">{{ post.title }}</h1>
+                                    <p class="has-text-dark" style="font-family: 'Poppins', sans-serif;">{{ post.intro }}</p>
+                                    <p style="font-family: 'Poppins', sans-serif;">{{ post.body }}</p>
 
 
                                     <hr>
-                                    <h2 class="subtitle is -4">Comments</h2>
+                                    <h2 class="subtitle is -2">Leave a comment</h2>
 
                                     <form method="post" class="mb-6">
                                         {% csrf_token %}
@@ -27,7 +27,7 @@
 
                                         <div class="field">
                                             <div class="control">
-                                                <button class="button is-success">Submit comment</button>
+                                                <button class="button is-success">Post comment</button>
                                             </div>
                                         </div>
                                     </form>
@@ -35,7 +35,8 @@
                                     {% for comment in post.comments.all %}
                                         <article class="media box">
                                             <div class="media-content">
-                                                <strong>{{ comment.name }}</strong><small>{{comment.created_at | timesince }} ago</small><br>
+                                                <strong>{{ comment.name }}</strong>
+                                                <p><small>{{comment.created_at | timesince }} ago</small><br></p>
                                                 {{ comment.body }}
                                             </div>
                                         </article>

@@ -3,6 +3,14 @@ from django.db.models.deletion import CASCADE
 from django.db.models.fields import CharField, SlugField
 
 # Create your models here.
+class Category(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField()
+    
+    class Meta:
+        ordering = ('title',)
+        verbose_name_plural = 'Categories'
+        
 class Posts(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
@@ -12,6 +20,7 @@ class Posts(models.Model):
     
     class Meta:
         ordering = ('-created_at',)
+        verbose_name_plural = 'Posts'
         
         
 class Comment(models.Model):
