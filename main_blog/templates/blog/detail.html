@@ -16,12 +16,13 @@
                                     <h1 class="title has-text-black is-2" style="font-family: 'Poppins', sans-serif;">{{ post.title }}</h1>
                                     <p class="has-text-dark" style="font-family: 'Poppins', sans-serif;">{{ post.intro }}</p>
                                     <p style="font-family: 'Poppins', sans-serif;">{{ post.body }}</p>
+                                    <p>category: <a href="{% url 'category_detail' post.category.slug %}"><small style="background-color: aliceblue;">{{ post.category }}</small></a></p>
 
 
                                     <hr>
                                     <h2 class="subtitle is -2">Leave a comment</h2>
 
-                                    <form method="post" class="mb-6">
+                                    <form method="post" class="box mb-6">
                                         {% csrf_token %}
                                         {{ form.as_p }}
 
