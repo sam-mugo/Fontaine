@@ -34,6 +34,6 @@ def category(request, slug):
 def search(request):
     query = request.GET.get('query', '')
     
-    posts = Posts.objects.filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
+    posts = Posts.objects.filter(status=Posts.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
     
     return render(request, 'blog/search.html', {'posts': posts, 'query': query})

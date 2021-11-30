@@ -13,6 +13,11 @@
                                 <div class="content is-medium">
                                     <!-- can also use date: 'm-d-y H:i' to use hour and minute created--> 
                                     <a href="{% url 'post_detail' post.category.slug post.slug %}">
+                                        {% if post.image %}
+                                            <figure class="image">
+                                                <img src="{{ post.image.url }}">
+                                            </figure>
+                                        {% endif %}
                                         <h2 class="subtitle is-5 has-text-grey">{{ post.created_at|timesince }} ago</h2>
                                         <h1 class="title has-text-black is-3">{{ post.title }}</h1>
                                         <p class="has-text-dark">{{ post.intro }}</p>
