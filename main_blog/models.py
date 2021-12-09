@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
 from django.db.models.fields import CharField, SlugField
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Category(models.Model):
@@ -30,7 +31,7 @@ class Posts(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
     intro = models.TextField()
-    body = models.TextField()
+    body = RichTextField()
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=10, choices=CHOICES_STATUS, default=ACTIVE)
     image = models.ImageField(upload_to='uploads', blank=True, null=True)
