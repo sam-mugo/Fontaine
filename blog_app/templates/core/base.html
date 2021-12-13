@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'images/favicon1.png' %}" type="image/x-icon">
 
 
 
@@ -71,10 +73,17 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>Fontaine</strong> by <a href="https://github.com/sam-mugo">Mugo</a><p>Copyright (c) 2021.</p> 
-        
+        <strong>Fontaine</strong> by <a href="https://github.com/sam-mugo">Mugo</a>
       </p>
+      <p>Copyright (c) 2021.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/samuel-mugo/" style="color: black;"><i class="fa fa-linkedin" aria-hidden="true" ></i></a>
+          <a href="https://github.com/sam-mugo" style="color: black;"><i class="fa fa-github" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/MMugzo" style="color: black;"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </ul>
+        </div
     </div>
+      
   </footer>
     
 </body>
