@@ -1,8 +1,48 @@
 {% extends 'core/base.html'%}
+<!DOCTYPE html>
+{% load static %}
 
-{% block title%}About |{% endblock %}
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main_blog/css/styles.css' %}">
+    {% block title%}About | {% endblock %}
+</head>
+<body>
 {% block content %}
-    <h1>About page</h1>
-    <p>Extended from base.html</p>
+<section id="colored-dna-back" class="hero is-white">
+    <div class="hero-body">
+      <div class="container">
+        <div class="rows  is-vcentered reverse-columns">
+          
+          <h1>Hi, my name is</h1>
+          <div class="name">
+            <h1 class="title titled is-1">
+                Samuel Mugo <br> I build things for the web
+                </h1>
+                
+          </div>
+          <div class="intro is-size-5">
+              I am an aspiring software engineer specializing in building and designing<br> scalable backend systems. My tech stack includes <span class="has-background-link has-text-info-light">Python</span> ,<span class="has-background-warning">Django</span> ,<span class="has-background-primary">Postgresql</span>  and <span class="has-background-grey has-text-info-light">htmx</span>.
+          </div>
+          <div class="contact mt-6">
+              <h1 class="is-size-4">Get in touch</h1>
+              <p>I'm currently open to backend developer positions whether in an Internship position <br>  or Junior Dev Role. My inbox is open whether you want to collaborate, work or just want to say hi</p>
+              <a class="button is-success mt-2" href="mailto: mugosam95@gmail.com">Say Hello<span><i class="fa fa-envelope px-2" aria-hidden="true"></i></span></a>
+          </div>
+          
+        </div>
+    </div>
+</div>
+    
 {% endblock %}
+    
+</body>
+</html>
+
+
+
+
+

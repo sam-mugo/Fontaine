@@ -4,12 +4,12 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-<section class="hero ">
+<section class="hero">
     <div class="hero-body">
         <div class="container">
             <section class="section">
                 {% if post.image %}
-                    <figure class="image mb-6">
+                    <figure class="image mt-0 mb-6">
                         <img src="{{ post.image.url }}">
                     </figure>
                 {% endif %}

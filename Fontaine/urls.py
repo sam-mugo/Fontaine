@@ -22,7 +22,8 @@ from django.urls import path, include
 
 from .sitemaps import CategorySitemap, PostSitemap
 
-from blog_app.views import frontpage, about, robots_txt
+from blog_app.views import frontpage, robots_txt
+from main_blog.views import about
 
 sitemaps = {'category': CategorySitemap, 'post': PostSitemap}
 
