@@ -1,1 +1,1 @@
-web: gunicorn fontaine.wsgi 
+web: gunicorn --pythonpath fontaine fontaine.wsgi 
