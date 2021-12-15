@@ -1,27 +1,41 @@
 {% extends 'core/base.html' %}
-{% block title %}{{ post.title }} | {% endblock %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}{{ post.title }} | {% endblock %}
+    <link rel="stylesheet" href="{% static 'main_blog/css/detail.css' %}">
+</head>
+<body>
+    
+
+
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 <section class="hero">
     <div class="hero-body">
         <div class="container">
-            <section class="section">
-                {% if post.image %}
-                    <figure class="image mt-0 mb-6">
-                        <img src="{{ post.image.url }}">
-                    </figure>
-                {% endif %}
+            
+                
+                
                 <div class="columns">
                     <div class="column is-8 is-offset-2">
                         
                             <div class="content is-medium">
-                                <!-- can also use date: 'm-d-y H:i' to use hour and minute created--> 
+                                <!-- can also use date: 'm-d-y H:i' to use hour and minute created-->
+                                <h1 class="title has-text-black is-size-1 has-text-weight-semibold" style="font-family: 'Bakbak One';">{{ post.title }}</h1>
+                                <h2 class="subtitle is-5 has-text-grey">{{ post.created_at|timesince }} ago</h2>
+                                {% if post.image %}
+                                    <figure class="image mt-0 mb-6">
+                                        <img src="{{ post.image.url }}">
+                                    </figure>
+                                {% endif %}
                                     
-                                
-                                    <h2 class="subtitle is-5 has-text-grey">{{ post.created_at|timesince }} ago</h2>
-                                    <h1 class="title has-text-black is-2" style="font-family: 'Poppins', sans-serif;">{{ post.title }}</h1>
                                     <p class="has-text-dark" style="font-family: 'Poppins', sans-serif;">{{ post.intro }}</p>
                                     <p style="font-family: 'Poppins', sans-serif;">{{ post.body | safe }}</p>
                                     <p>category: <a href="{% url 'category_detail' post.category.slug %}"><small style="background-color: aliceblue;">{{ post.category }}</small></a></p>
@@ -61,4 +75,6 @@
         </div>
     </div>
 </section>
+</body>
+</html>
 {% endblock %}
