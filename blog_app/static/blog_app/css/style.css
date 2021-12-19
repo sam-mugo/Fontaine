@@ -1,0 +1,9 @@
+body, .navbar {
+    
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+
+}
+.footer {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+
+}
